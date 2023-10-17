@@ -19,7 +19,7 @@ const Quote = () => {
   }, []);
 
   return (
-    <div>
+    <div className="font-sans">
       <p>{quote.content}</p>
       <p>{quote.author}</p>
     </div>
