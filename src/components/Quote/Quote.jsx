@@ -9,7 +9,6 @@ const Quote = () => {
       try {
         const response = await axios.get("https://api.quotable.io/random");
         setQuote(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching the quote:", error);
       }
@@ -19,8 +18,8 @@ const Quote = () => {
   }, []);
 
   return (
-    <div className="font-sans">
-      <p>{quote.content}</p>
+    <div className="font-sans tracking-widest text-xl">
+      <p>"{quote.content}"</p>
       <p>{quote.author}</p>
     </div>
   );

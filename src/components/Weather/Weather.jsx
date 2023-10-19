@@ -11,7 +11,6 @@ const Weather = () => {
           "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,precipitation_probability_max,windspeed_10m_max&timezone=Europe%2FBerlin"
         );
         setWeather(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching weather", error);
       }
