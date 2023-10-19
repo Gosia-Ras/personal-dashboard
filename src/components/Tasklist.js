@@ -38,7 +38,7 @@ const tasks = [
 
 const Tasklist = () => {
   return (
-    <div>
+    <div className="w-full mt-16 lg:px-4 justify-center">
       <h2>Task list</h2>
       <ul role="list" className="divide-y divide-gray-100">
         {tasks.map((task) => (

@@ -1,6 +1,26 @@
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
 const Weather = () => {
+  const [weather, setWeather] = useState("");
+
+  useEffect(() => {
+    async function fetchWeather() {
+      try {
+        const response = await axios.get(
+          "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,precipitation_probability_max,windspeed_10m_max&timezone=Europe%2FBerlin"
+        );
+        setWeather(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching weather", error);
+      }
+    }
+
+    console.log(fetchWeather());
+  }, []);
   return (
-    <div className="w-full mt-16 lg:px-40 justify-center container mx-auto">
+    <div className="w-full mt-16 lg:px-10 justify-center container mx-auto">
       <div className="flex flex-wrap w-full lg:w-auto">
         <div className="w-full lg:w-1/2 flex rounded-lg bg-auto weather">
           <div className="rounded-lg py-6 pl-8 pr-32 w-full bg-blue-400 opacity-90 text-white">
@@ -18,7 +38,7 @@ const Weather = () => {
         </div>
 
         <div className="w-full lg:w-1/2 flex ml-0">
-          <div className="lg:my-3 bg-gray-800 text-white p-8 lg:rounded-r-lg w-full">
+          <div className="lg:my-3 bg-gray-800 text-white p-4 lg:rounded-r-lg w-full">
             <div className="flex justify-between w-64 mb-4 w-full">
               <div className="w-auto font-bold uppercase text-90">
                 Precipitation
