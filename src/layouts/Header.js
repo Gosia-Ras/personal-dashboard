@@ -2,9 +2,9 @@
 // mock-up header
 
 import React from "react";
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const user = {
   name: "Tom Cook",
@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -106,11 +106,9 @@ const Header = () => {
           )}
         </Disclosure>
 
-        <header className="bg-white text-blue shadow">
+        <header>
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              Dashboard
-            </h1>
+            <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
           </div>
         </header>
       </div>

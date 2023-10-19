@@ -7,15 +7,15 @@ import Weather from "./components/Weather/Weather";
 
 function App() {
   return (
-    <div className="App bg-jet text-zinc-100">
+    <div className="App text-zinc-100">
       <Header />
-      <main className="bg-slate-700">
-        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <main className="container mx-auto">
+        <div className="mx-auto max-w-7xl py-14 sm:px-6 lg:px-8 flex flex-row justify-between gap-10">
           <Quote />
+          <Weather />
         </div>
         <div className=" mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex flex-row justify-between">
           <Tasklist />
-          <Weather />
         </div>
       </main>
       <Footer />

@@ -12,9 +12,9 @@ export function TodoForm({ onSubmit }) {
     setNewItem("");
   }
   return (
-    <form action="" onSubmit={handleSubmit} className="new-item-form">
-      <div className="form-row flex flex-col">
-        <label htmlFor="">New Item</label>
+    <form action="" onSubmit={handleSubmit} className="new-item-form mb-8">
+      <div className="form-row flex flex-col mb-3">
+        <label className="text-xl mb-3">Add New Item</label>
         <input
           className="text-slate-900 p-2"
           type="text"
@@ -23,7 +23,9 @@ export function TodoForm({ onSubmit }) {
           onChange={(e) => setNewItem(e.target.value)}
         />
       </div>
-      <button className="bg-green-900 text-white p-3">Add</button>
+      <button className="bg-teal-700 text-white px-4 py-2 rounded hover:bg-teal-500 transition-all duration-200 mb-3">
+        Add
+      </button>
     </form>
   );
 }

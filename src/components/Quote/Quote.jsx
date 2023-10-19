@@ -18,7 +18,7 @@ const Quote = () => {
   }, []);
 
   return (
-    <div className="font-sans tracking-widest text-xl">
+    <div className="font-sans tracking-widest text-xl basis-1/3 quote flex flex-col justify-center p-5">
       <p>"{quote.content}"</p>
       <p>{quote.author}</p>
     </div>

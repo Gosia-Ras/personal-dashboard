@@ -11,6 +11,7 @@ const Weather = () => {
           "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,precipitation_probability_max,windspeed_10m_max&timezone=Europe%2FBerlin"
         );
         setWeather(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching weather", error);
       }
@@ -19,10 +20,10 @@ const Weather = () => {
     console.log(fetchWeather());
   }, []);
   return (
-    <div className="w-full mt-16 lg:px-10 justify-center container mx-auto">
+    <div className="w-full justify-center container mx-auto weather">
       <div className="flex flex-wrap w-full lg:w-auto">
-        <div className="w-full lg:w-1/2 flex rounded-lg bg-auto weather">
-          <div className="rounded-lg py-6 pl-8 pr-32 w-full bg-blue-400 opacity-90 text-white">
+        <div className="w-full lg:w-1/2 flex rounded-lg bg-auto">
+          <div className="rounded-lg py-6 pl-8 pr-32 w-full text-zinc-200">
             <div className="mb-20">
               <h2 className="font-bold text-3xl leading-none pb-1">Tuesday</h2>
               <h3 className="leading-none pb-2 pl-1">15 Jan 19</h3>
@@ -37,22 +38,22 @@ const Weather = () => {
         </div>
 
         <div className="w-full lg:w-1/2 flex ml-0">
-          <div className="lg:my-3 bg-gray-800 text-white p-4 lg:rounded-r-lg w-full">
-            <div className="flex justify-between w-64 mb-4 w-full">
+          <div className="lg:my-3 text-zinc-200 text-lg p-4 lg:rounded-r-lg w-full ">
+            <div className="flex justify-between mb-4 w-full">
               <div className="w-auto font-bold uppercase text-90">
                 Precipitation
               </div>
               <div className="w-auto text-right">10 %</div>
             </div>
-            <div className="flex justify-between w-64 mb-4 w-full">
+            <div className="flex justify-between mb-4 w-full">
               <div className="w-auto font-bold uppercase text-90">Humidity</div>
               <div className="w-auto text-right">29 %</div>
             </div>
-            <div className="flex justify-between w-64 mb-8 w-full">
+            <div className="flex justify-between mb-8 w-full">
               <div className="w-auto font-bold uppercase text-90">Wind</div>
               <div className="w-auto text-right">12 Mph</div>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row gap-2">
               <div className="flex flex-col w-1/4 bg-gray-100 text-black rounded-lg pb-4">
                 <div className="text-center pt-2 mb-2"></div>
                 <div className="text-center">

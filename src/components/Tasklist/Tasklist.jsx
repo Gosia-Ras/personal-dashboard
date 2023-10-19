@@ -46,9 +46,9 @@ const Tasklist = () => {
   }
 
   return (
-    <div className="w-full mt-16 lg:px-4 justify-center">
+    <div className="w-full mt-8 tasklist p-8">
       <TodoForm onSubmit={addTodo} />
-      <h1>Task list</h1>
+      <h1 className="text-3xl font-semibold mb-5">Task list</h1>
       <List todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
