@@ -1,26 +1,31 @@
 // Header.js
-// mock-up header
 
 import React from "react";
 
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Weather", href: "#", current: false },
-  { name: "To-Do", href: "#", current: false },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Header = () => {
+const Header = ({ inputRef }) => {
+  const handleTodoClick = () => {
+    if (inputRef && inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  const navigation = [
+    { name: "Dashboard", href: "#", current: true },
+    { name: "Weather", href: "#", current: false },
+    { name: "To-Do", href: "#", current: false },
+  ];
+
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav">
+        <Disclosure as="nav" className="bg-slate-800">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -39,6 +44,11 @@ const Header = () => {
                           <a
                             key={item.name}
                             href={item.href}
+                            onClick={
+                              item.name === "To-Do"
+                                ? handleTodoClick
+                                : undefined
+                            }
                             className={classNames(
                               item.current
                                 ? "bg-gray-900 text-white"
@@ -101,8 +111,8 @@ const Header = () => {
         </Disclosure>
 
         <header>
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+          <div className="mx-auto mt-8 max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <h1 className="text-3xl font-bold tracking-wide">Dashboard</h1>
           </div>
         </header>
       </div>

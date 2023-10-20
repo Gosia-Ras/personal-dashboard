@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { TodoForm } from "./Form";
 import { List } from "./List";
 
-const Tasklist = () => {
+const Tasklist = ({ inputRef }) => {
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
     if (localValue == null) return [];
@@ -47,8 +47,8 @@ const Tasklist = () => {
 
   return (
     <div className="w-full mt-8 tasklist p-8">
-      <TodoForm onSubmit={addTodo} />
-      <h1 className="text-3xl font-semibold mb-5">Task list</h1>
+      <TodoForm onSubmit={addTodo} inputRef={inputRef} />
+      <h1 className="text-3xl font-semibold tracking-wide mb-5">Task list</h1>
       <List todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );

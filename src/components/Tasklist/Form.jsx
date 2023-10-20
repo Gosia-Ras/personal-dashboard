@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function TodoForm({ onSubmit }) {
+export function TodoForm({ onSubmit, inputRef }) {
   const [newItem, setNewItem] = useState("");
 
   function handleSubmit(e) {
@@ -16,7 +16,8 @@ export function TodoForm({ onSubmit }) {
       <div className="form-row flex flex-col mb-3">
         <label className="text-xl mb-3">Add New Item</label>
         <input
-          className="text-slate-900 p-2"
+          ref={inputRef}
+          className="text-slate-900 p-2 focus:border-cyan-600 focus:border-2"
           type="text"
           id="item"
           value={newItem}
