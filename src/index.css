@@ -51,3 +51,7 @@ html {
 .item:hover button {
   opacity: 1;
 }
+
+select#location-select {
+  border-radius: 20px;
+}

@@ -11,8 +11,10 @@ function App() {
     <div className="App text-zinc-100">
       <Header inputRef={inputRef} />
       <main className="container mx-auto">
-        <div className="mx-auto max-w-7xl py-14 sm:px-6 lg:px-8 flex flex-row justify-between gap-10">
+        <div className="mx-auto max-w-7xl py-14 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between gap-10">
           <Quote />
+        </div>
+        <div className="mx-auto max-w-7xl py-14 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between gap-10">
           <Weather />
         </div>
         <div className=" mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex flex-row justify-between">
