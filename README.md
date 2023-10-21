@@ -5,4 +5,4 @@
 
 ## Work in progress
 
-![App Screenshot](./src/assets/Screenshot%202023-10-21%20134146.png")
+![App Screenshot](https://github.com/Gosia-Ras/personal-dashboard/blob/main/src/assets/Screenshot%202023-10-21%20134146.png)
