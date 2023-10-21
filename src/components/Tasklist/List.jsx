@@ -1,23 +1,27 @@
 import { ListItem } from "./ListItem";
 
 export function List({ todos, toggleTodo, deleteTodo }) {
+  const uncompletedTasks = todos.filter((todo) => !todo.completed).length;
+
   return (
     <ul className="list">
       {(() => {
-        if (todos.length === 0) {
-          return (
-            <p className="text-sm mb-5">There's nothing on your list yet :)</p>
-          );
-        } else if (todos.length === 1) {
+        if (uncompletedTasks === 0) {
           return (
             <p className="text-sm mb-5">
-              You have {todos.length} task to complete
+              You don't have any uncompleted tasks :)
+            </p>
+          );
+        } else if (uncompletedTasks === 1) {
+          return (
+            <p className="text-sm mb-5">
+              You have {uncompletedTasks} task to complete
             </p>
           );
         } else {
           return (
             <p className="text-sm mb-5">
-              You have {todos.length} tasks to complete
+              You have {uncompletedTasks} tasks to complete
             </p>
           );
         }
