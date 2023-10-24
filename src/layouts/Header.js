@@ -4,6 +4,7 @@ import React from "react";
 
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Clock from "../components/Clock/Clock";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -111,8 +112,9 @@ const Header = ({ inputRef }) => {
         </Disclosure>
 
         <header>
-          <div className="mx-auto mt-5 max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="mx-auto flex flex-row justify-between mt-5 max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-wide">Dashboard</h1>
+            <Clock />
           </div>
         </header>
       </div>

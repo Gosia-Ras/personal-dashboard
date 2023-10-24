@@ -7,6 +7,7 @@ import React, { useRef } from "react";
 
 function App() {
   const inputRef = useRef(null);
+
   return (
     <div className="App text-zinc-100">
       <Header inputRef={inputRef} />
