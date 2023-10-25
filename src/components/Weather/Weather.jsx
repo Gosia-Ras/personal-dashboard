@@ -1,28 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
-const locations = [
-  { name: "New York", latitude: 40.7128, longitude: -74.006 },
-  { name: "London", latitude: 51.5074, longitude: -0.1278 },
-  { name: "Tokyo", latitude: 35.6895, longitude: 139.6917 },
-  { name: "Paris", latitude: 48.8566, longitude: 2.3522 },
-  { name: "Los Angeles", latitude: 34.0522, longitude: -118.2437 },
-  { name: "Rome", latitude: 41.9028, longitude: 12.4964 },
-  { name: "Sydney", latitude: -33.8688, longitude: 151.2093 },
-  { name: "Moscow", latitude: 55.7558, longitude: 37.6176 },
-  { name: "Dubai", latitude: 25.276987, longitude: 55.296249 },
-  { name: "Berlin", latitude: 52.52, longitude: 13.405 },
-  { name: "Beijing", latitude: 39.9042, longitude: 116.4074 },
-  { name: "Cairo", latitude: 30.0444, longitude: 31.2357 },
-  { name: "São Paulo", latitude: -23.5505, longitude: -46.6333 },
-  { name: "Singapore", latitude: 1.3521, longitude: 103.8198 },
-  { name: "Toronto", latitude: 43.65107, longitude: -79.347015 },
-  { name: "Istanbul", latitude: 41.0082, longitude: 28.9784 },
-  { name: "Seoul", latitude: 37.5665, longitude: 126.978 },
-  { name: "Mumbai", latitude: 19.076, longitude: 72.8777 },
-  { name: "Mexico City", latitude: 19.4326, longitude: -99.1332 },
-  { name: "Lagos", latitude: 6.5244, longitude: 3.3792 },
-];
+import { locations } from "./utilities/locations";
+import LocationSelect from "./LocationSelect";
 
 const Weather = () => {
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -56,19 +35,15 @@ const Weather = () => {
   return (
     <section className="w-full containerb mx-auto p-2">
       <h2 className="font-bold mb-5 text-3xl leading-none pb-1">Weather</h2>
+      <details className="mb-3">
+        <summary>Details</summary>
+        <code>
+          I want to keep this project API Key free, which is why you can only
+          pick locations from this list - sorry 😔
+        </code>
+      </details>
       <div className="flex flex-wrap flex-col weather">
-        <select
-          onChange={handleLocationChange}
-          className="bg-slate-800 p-5"
-          id="location-select"
-        >
-          <option value="">Select a location</option>
-          {locations.map((loc, index) => (
-            <option key={index} value={loc.name}>
-              {loc.name}
-            </option>
-          ))}
-        </select>
+        <LocationSelect handleLocationChange={handleLocationChange} />
 
         {weather && (
           <>
