@@ -1,5 +1,6 @@
 import { ListItem } from "./ListItem";
 import { useState } from "react";
+import TaskFilter from "./TaskFilter";
 
 export function List({ todos, toggleTodo, deleteTodo }) {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -11,44 +12,14 @@ export function List({ todos, toggleTodo, deleteTodo }) {
     Completed: (todo) => todo.completed,
   };
 
-  function filterTasks(event) {
-    const filterName = event.target.dataset.filter; // Use data attributes to identify which filter is clicked
-    setActiveFilter(filterName);
-  }
-
   const filteredTodos = todos.filter(filterMap[activeFilter]);
 
   return (
     <>
-      <div className="filters flex flex-row gap-2 my-5">
-        <button
-          type="button"
-          className="border-2 rounded p-2 hover:bg-teal-700 transition-all duration-200"
-          aria-pressed={activeFilter === "All"}
-          data-filter="All"
-          onClick={filterTasks}
-        >
-          Show all tasks
-        </button>
-        <button
-          type="button"
-          className="border-2 rounded p-2 hover:bg-teal-700 transition-all duration-200"
-          aria-pressed={activeFilter === "Active"}
-          data-filter="Active"
-          onClick={filterTasks}
-        >
-          Show active tasks
-        </button>
-        <button
-          type="button"
-          className="border-2 rounded p-2 hover:bg-teal-700 transition-all duration-200"
-          aria-pressed={activeFilter === "Completed"}
-          data-filter="Completed"
-          onClick={filterTasks}
-        >
-          Show completed tasks
-        </button>
-      </div>
+      <TaskFilter
+        activeFilter={activeFilter}
+        onFilterChange={setActiveFilter}
+      />
       <ul className="list">
         {(() => {
           if (uncompletedTasks === 0) {

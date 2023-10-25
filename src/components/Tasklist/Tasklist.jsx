@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
-import { TodoForm } from "./Form";
-import { List } from "./List";
+import useLocalStorage from "./useLocalStorage";
+import { TaskForm } from "./Form/TaskForm";
+import { List } from "./Task/List";
 
 const Tasklist = ({ inputRef }) => {
-  const [todos, setTodos] = useState(() => {
-    const localValue = localStorage.getItem("ITEMS");
-    if (localValue == null) return [];
-
-    return JSON.parse(localValue);
-  });
-
-  useEffect(() => {
-    localStorage.setItem("ITEMS", JSON.stringify(todos));
-  }, [todos]);
+  const [todos, setTodos] = useLocalStorage("ITEMS", []);
 
   function toggleTodo(id, completed) {
     setTodos((currentTodos) => {
@@ -47,7 +38,7 @@ const Tasklist = ({ inputRef }) => {
 
   return (
     <div className="w-full mt-8 tasklist p-8">
-      <TodoForm onSubmit={addTodo} inputRef={inputRef} />
+      <TaskForm onSubmit={addTodo} inputRef={inputRef} />
       <h1 className="text-3xl font-semibold tracking-wide mb-5">Task list</h1>
       <List todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
