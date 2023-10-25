@@ -1,4 +1,4 @@
-import { locations } from "./utilities/locations";
+import { locations } from "../utilities/locations";
 
 function LocationSelect({ handleLocationChange }) {
   return (
