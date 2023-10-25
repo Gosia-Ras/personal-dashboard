@@ -9,18 +9,18 @@ function App() {
   const inputRef = useRef(null);
 
   return (
-    <div className="App text-zinc-100">
+    <div className="App min-h-full flex flex-col text-zinc-100">
       <Header inputRef={inputRef} />
-      <main className="container mx-auto">
-        <div className="mx-auto max-w-7xl py-8 lg:py-14 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between gap-10">
+      <main className="container mx-auto flex flex-col gap-5 mb-5 items-center">
+        <article className="max-w-7xl w-full rounded-lg py-5 lg:py-8 lg:px-8 px-3 flex flex-col lg:flex-row justify-between gap-10">
           <Quote />
-        </div>
-        <div className="mx-auto max-w-7xl py-8 lg:py-14 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between gap-10">
+        </article>
+        <article className="max-w-7xl w-full rounded-lg py-5 lg:py-8 lg:px-8 px-3 flex flex-col lg:flex-row justify-between gap-10">
           <Weather inputRef={inputRef} />
-        </div>
-        <div className=" mx-auto max-w-7xl py-8 lg:py-14 sm:px-6 lg:px-8 flex flex-row justify-between">
+        </article>
+        <article className="max-w-7xl w-full rounded-lg py-5 lg:py-8 lg:px-8 px-3 flex flex-col lg:flex-row justify-between gap-10">
           <Tasklist inputRef={inputRef} />
-        </div>
+        </article>
       </main>
       <Footer />
     </div>

@@ -9,7 +9,7 @@ function TaskFilter({ activeFilter, onFilterChange }) {
     <div className="filters flex flex-row gap-2 my-5">
       <button
         type="button"
-        className="border-2 rounded p-2 hover:bg-teal-700 transition-all duration-200"
+        className="border-2 rounded-lg p-2 hover:bg-teal-700 transition-all duration-200"
         aria-pressed={activeFilter === "All"}
         data-filter="All"
         onClick={handleFilterChange}
@@ -18,7 +18,7 @@ function TaskFilter({ activeFilter, onFilterChange }) {
       </button>
       <button
         type="button"
-        className="border-2 rounded p-2 hover:bg-teal-700 transition-all duration-200"
+        className="border-2 rounded-lg p-2 hover:bg-teal-700 transition-all duration-200"
         aria-pressed={activeFilter === "Active"}
         data-filter="Active"
         onClick={handleFilterChange}
@@ -27,7 +27,7 @@ function TaskFilter({ activeFilter, onFilterChange }) {
       </button>
       <button
         type="button"
-        className="border-2 rounded p-2 hover:bg-teal-700 transition-all duration-200"
+        className="border-2 rounded-lg p-2 hover:bg-teal-700 transition-all duration-200"
         aria-pressed={activeFilter === "Completed"}
         data-filter="Completed"
         onClick={handleFilterChange}

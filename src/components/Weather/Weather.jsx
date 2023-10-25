@@ -14,24 +14,25 @@ const Weather = () => {
   };
 
   return (
-    <section className="w-full containerb mx-auto p-2">
+    <section className="w-full">
       <h2 className="font-bold mb-5 text-3xl leading-none pb-1">Weather</h2>
       <details className="mb-3">
         <summary>Details</summary>
         <code>
           I want to keep this project API Key free, which is why you can only
-          pick locations from this list - sorry 😔
+          pick locations from this list <br />
+          Thank you for your understanding 😔
         </code>
       </details>
       <div className="flex flex-wrap flex-col weather">
         <LocationSelect handleLocationChange={handleLocationChange} />
 
         {weather && (
-          <article className="rounded-lg p-8 w-full text-zinc-200 flex flex-col gap-5">
+          <div className="rounded-lg py-5 w-full text-zinc-200 flex flex-col gap-5">
             <WeatherHeader weather={weather} />
             <WeatherDetails weather={weather} />
             <WeatherWeekly weather={weather} />
-          </article>
+          </div>
         )}
       </div>
     </section>

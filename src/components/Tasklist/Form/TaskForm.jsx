@@ -21,7 +21,7 @@ export function TaskForm({ onSubmit, inputRef }) {
           inputRef={inputRef}
         />
       </div>
-      <button className="bg-teal-700 text-white px-4 py-2 rounded hover:bg-teal-500 transition-all duration-200 mb-3">
+      <button className=" border-2 rounded-lg p-2 hover:bg-teal-700 transition-all duration-200">
         Add
       </button>
     </form>
