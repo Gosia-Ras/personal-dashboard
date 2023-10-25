@@ -54,7 +54,7 @@ const Weather = () => {
     fetchWeather();
   }, [selectedLocation]);
   return (
-    <section className="w-full containerb mx-auto">
+    <section className="w-full containerb mx-auto p-2">
       <h2 className="font-bold mb-5 text-3xl leading-none pb-1">Weather</h2>
       <div className="flex flex-wrap flex-col weather">
         <select

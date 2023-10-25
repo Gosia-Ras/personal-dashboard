@@ -112,7 +112,7 @@ const Header = ({ inputRef }) => {
         </Disclosure>
 
         <header>
-          <div className="mx-auto flex flex-row justify-between mt-5 max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="mx-auto flex flex-col lg:gap-0 gap-5 lg:flex-row justify-between mt-5 max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-wide">Dashboard</h1>
             <Clock />
           </div>
